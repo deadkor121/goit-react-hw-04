@@ -1,0 +1,10 @@
+.galleryItem {
+  list-style: none;
+  cursor: pointer;
+}
+
+.galleryImage {
+  width: 300px;
+  height: 250px;
+  display: block;
+}
