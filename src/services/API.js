@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ACCESS_KEY = "uRbjthHwB56Dd64vCktCP15eYSWhxayYeNHDzHA5aBQ";
+const ACCESS_KEY = "6tIE8k2rBkR87RyjfFfcTPOV49ZRQSm7puuLjjSnRsw";
 
 export async function getImages(search, page = 1) {
   if (search === "") return;
