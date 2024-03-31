@@ -15,7 +15,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^6.1.6",
-    "npm install --save react-modal": "^3.16.1",
     "unsplash-js": "^7.0.19"
   },
   "devDependencies": {
