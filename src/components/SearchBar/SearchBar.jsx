@@ -1,30 +1,30 @@
-import clsx from "clsx";
-import style from "./SearchBar.module.css";
-
-const SearchBar = ({ onSubmit }) => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const { search } = form.elements;
-    onSubmit(search.value);
-  };
-
+import { Field, Form, Formik } from 'formik';
+import css from './SearchBar.module.css';
+import { CiSearch } from 'react-icons/ci';
+const SearchBar = ({ onSearch }) => {
   return (
-    <header className={clsx(style.headerBox)}>
-      <form className={clsx(style.headerForm)} onSubmit={handleSubmit}>
-        <input
-          className={clsx(style.headerInput)}
-          type="text"
-          name="search"
-          autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
-        />
-        <button className={clsx(style.formButton)} type="submit">
-          Search
-        </button>
-      </form>
-    </header>
+    <>
+      <header className={css.galleryHeader}>
+        <Formik
+          initialValues={{ query: '' }}
+          onSubmit={(values, actions) => {
+            onSearch(values.query);
+            actions.resetForm();
+          }}
+        >
+          <Form className={css.searchForm}>
+            <Field
+              name="query"
+              className={css.formInput}
+              placeholder="Search images and photos"
+            />
+            <button type="submit" className={css.searchBtn}>
+              <CiSearch />
+            </button>
+          </Form>
+        </Formik>
+      </header>
+    </>
   );
 };
 

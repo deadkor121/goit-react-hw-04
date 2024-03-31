@@ -1,26 +1,15 @@
-import clsx from "clsx";
-import style from "./ImageCard.module.css";
+import css from './ImageCard.module.css';
 
-const ImageCard = ({ dataImages, openModal }) => {
-  const handleClick = () => {
-    const object = {
-      bool: true,
-      src: dataImages.regular,
-      alt: dataImages.description,
-    };
-    openModal(object);
-  };
+const ImageCard = ({ image, openModal }) => {
   return (
-    <li className={clsx(style.galleryItem)} onClick={handleClick}>
-      <div>
-        <img
-          className={clsx(style.galleryImage)}
-          src={dataImages.small}
-          alt={dataImages.description}
-        />
-      </div>
-    </li>
+    <img
+      src={image.urls.small}
+      alt={image.alt_description}
+      className={css.galleryImage}
+      onClick={() => {
+        openModal(image);
+      }}
+    />
   );
 };
-
 export default ImageCard;

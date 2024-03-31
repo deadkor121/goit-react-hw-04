@@ -1,14 +1,8 @@
-import clsx from "clsx";
-import style from "./ErrorMessage.module.css";
 const ErrorMessage = () => {
   return (
-    <div className={clsx(style.errorBox)}>
-      <p className={clsx(style.errorTitrle)}>There was an error!</p>
-      <p className={clsx(style.errorText)}>
-        Please check the correctness of the input.
-      </p>
-    </div>
+    <>
+      <p>Oops, we have issue here, please reload the page...</p>
+    </>
   );
 };
-
 export default ErrorMessage;

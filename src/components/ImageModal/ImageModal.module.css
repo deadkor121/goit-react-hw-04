@@ -1,0 +1,6 @@
+.modalImg {
+  display: block;
+  width: 100%;
+  height: 780px;
+  object-fit: cover;
+}
